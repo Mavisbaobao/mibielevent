@@ -1,0 +1,33 @@
+// 很多页面中都有hover效果 但是颜色不一样
+// clearfix
+// box-sizing
+// border-radius
+
+.boxSizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing:  border-box;
+}
+
+// 在某一个应用场景下 有三处地方都有这样的效果  但是圆角的大小不同
+.borderRadiusThree(@topleft,@topright,@bottomrgiht) {
+  border-top-left-radius:  @topleft;
+  border-top-right-radius:  @topright;
+  border-bottom-right-radius:  @bottomrgiht;
+}
+
+// 改进上面的borderRadiusThree 
+.borderRadiusFour(@topleft:5px,@topright:5px,@bottomrgiht:5px) {
+  border-top-left-radius:  @topleft;
+  border-top-right-radius:  @topright;
+  border-bottom-right-radius:  @bottomrgiht;
+}
+
+.box {
+  .boxSizing();
+}
+
+.box2 {
+  // 以下混合器必须传参数 不传参数会报错
+  .borderRadiusThree(5px, 6px, 8px);
+}
